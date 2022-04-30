@@ -4,3 +4,7 @@
     min-width: 80vw;
     overflow: scroll;
 }
+
+.spinner-grow {
+    color: #006d77;
+}

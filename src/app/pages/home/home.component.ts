@@ -12,14 +12,24 @@ export class HomeComponent implements OnInit {
   movieList: Movie[] = [];
   textSearch: string = ""; //bindeo de ambas direcciones con una variable del html
   loading: boolean = false;
+  loading_page: boolean = false;
   constructor(private service: MoviesService) { }
 
   ngOnInit(): void {
-    this.service.getDataMovies()
-      .subscribe(resp => {
-        console.log(resp.Search)
-        this.movieList = resp.Search
-      })
+    this.loading_page = true;
+    setTimeout(() => {
+      this.loading_page = true;
+      this.service.getDataMovies()
+        .subscribe(resp => {
+          console.log(resp.Search)
+          this.movieList = resp.Search
+        })
+
+
+    }, 3000);
+
+
+
   }
 
   onClickSearch() {

@@ -9,7 +9,7 @@ export class GiphyService {
 
   constructor(private http: HttpClient) { }
   getDataGifs() {
-    return this.http.get<ApiGifResult>('https://g.tenor.com/v1/search?q=excited&key=JJ3QI6KZOLCK&limit=8')
+    return this.http.get<ApiGifResult>('https://g.tenor.com/v1/search?q=&key=JJ3QI6KZOLCK&limit=8')
   }
 
   searchDataMovie(text: string) {

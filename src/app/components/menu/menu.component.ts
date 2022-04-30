@@ -10,13 +10,13 @@ export class MenuComponent implements OnInit {
   items: any[] = [
     {
       url: 'home',
-      text: 'Home',
-      icon: 'bi-house'
+      text: 'Películas',
+      icon: 'bi-film'
     },
     {
       url: 'contact',
-      text: 'Contact',
-      icon: 'bi-telephone'
+      text: 'Gifs',
+      icon: 'bi-emoji-smile-upside-down'
     },
     {
       url: 'about',

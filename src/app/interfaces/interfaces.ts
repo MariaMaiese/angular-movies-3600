@@ -12,19 +12,31 @@ export interface ApiResult {
     Response: boolean
 }
 
-//export interface urlGif {
+export interface GifInfo {
+    url: string,
+    dims: any,
+    size: number,
+    preview: string
+}
+
+//export interface webm {
 //    preview: string,
 //    url: string
 //}
 
-export interface webm {
-    preview: string,
-    url: string
-}
+export interface mediaInfo {
+    mediumgif: any,
+    gif: GifInfo,
+    nanowebm: any,
+    mp4: any,
+    tinymp4: any,
+    nanomp4: any,
+    tinygif: any,
+    loopedmp4: any,
+    nanogif: any,
+    webm: any,
+    tinywebm: any
 
-export interface GifInfo {
-    //gif: urlGif,
-    webm: webm
 
 }
 
@@ -34,7 +46,7 @@ export interface Gif {
     content_description: string,
     content_rating: string,
     h1_title: string,
-    media: GifInfo[],
+    media: mediaInfo[],
     itemurl: string,
     url: string
 }

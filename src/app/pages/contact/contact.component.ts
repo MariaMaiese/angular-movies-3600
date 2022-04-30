@@ -12,14 +12,20 @@ export class ContactComponent implements OnInit {
   gifList: Gif[] = [];
   textSearch: string = "";
   loading: boolean = false;
+  //loading_page: boolean = true;
 
   constructor(private service: GiphyService) { }
 
   ngOnInit(): void {
+    this.loading = true
     this.service.getDataGifs()
       .subscribe(resp => {
+        this.loading = false
         this.gifList = resp.results
       })
+
+
+
   }
   onClickSearch() {
     this.loading = true;
@@ -41,5 +47,7 @@ export class ContactComponent implements OnInit {
 
 
   }
+
+
 
 }

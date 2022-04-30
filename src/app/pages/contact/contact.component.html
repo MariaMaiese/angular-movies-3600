@@ -1,6 +1,4 @@
 <div class="div-content">
-
-
     <section class=" text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -29,7 +27,7 @@
                 <div *ngFor="let gif of gifList" class="col">
                     <div class="card shadow-sm">
 
-                        <img src="{{gif.media}}" alt="">
+                        <img src="{{gif.media[0].gif.url}}" alt="">
 
                         <div class="card-body">
                             <p class="card-text">{{gif.content_description}}</p>
