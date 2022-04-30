@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/interfaces/interfaces';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  movieList: any[] = [1, 1];
-  constructor() { }
+  movieList: Movie[] = [];
+  textSearch: string = ""; //bindeo de ambas direcciones con una variable del html
+  loading: boolean = false;
+  constructor(private service: MoviesService) { }
 
   ngOnInit(): void {
+    this.service.getDataMovies()
+      .subscribe(resp => {
+        console.log(resp.Search)
+        this.movieList = resp.Search
+      })
+  }
+
+  onClickSearch() {
+    this.loading = true; //se esta empezando a ejecutar la accion
+    this.movieList = [];
+    //console.log('click:' + this.textSearch)
+
+    setTimeout(() => {
+      this.service.searchDataMovie(this.textSearch)
+        .subscribe(resp => {
+          this.loading = false; //aqui ya obtenemos la respuesta, por lo tanto ya no estaria cargando
+          console.log(resp.Search);
+          if (resp.Search) {
+            this.movieList = resp.Search;
+          } else {
+            this.movieList = [];
+          }
+        })
+    }, 2000);
+
   }
 
 }

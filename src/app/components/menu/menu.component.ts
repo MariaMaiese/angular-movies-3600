@@ -14,14 +14,14 @@ export class MenuComponent implements OnInit {
       icon: 'bi-house'
     },
     {
-      url: 'about',
-      text: 'About',
-      icon: 'bi-umbrella'
-    },
-    {
       url: 'contact',
       text: 'Contact',
       icon: 'bi-telephone'
+    },
+    {
+      url: 'about',
+      text: 'About',
+      icon: 'bi-umbrella'
     }
   ];
 
