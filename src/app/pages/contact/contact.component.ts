@@ -12,17 +12,22 @@ export class ContactComponent implements OnInit {
   gifList: Gif[] = [];
   textSearch: string = "";
   loading: boolean = false;
-  //loading_page: boolean = true;
+  loading_page: boolean = false;
 
   constructor(private service: GiphyService) { }
 
   ngOnInit(): void {
-    this.loading = true
-    this.service.getDataGifs()
-      .subscribe(resp => {
-        this.loading = false
-        this.gifList = resp.results
-      })
+    this.loading_page = true;
+    setTimeout(() => {
+      this.loading_page = false;
+
+      this.service.getDataGifs()
+        .subscribe(resp => {
+          this.loading = false
+          this.gifList = resp.results
+        })
+    }, 3000);
+
 
 
 

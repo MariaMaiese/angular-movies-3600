@@ -1,4 +1,14 @@
 .div-menu {
-    min-width: 20vw;
+    min-width: 13vw;
     min-height: 100vh;
+    background-color: #14213d;
+}
+
+.title {
+    color: #fca311;
+
+}
+
+.texto {
+    font-family: 'Montserrat', sans-serif;
 }

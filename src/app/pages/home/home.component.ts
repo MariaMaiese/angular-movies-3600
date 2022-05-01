@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loading_page = true;
     setTimeout(() => {
-      this.loading_page = true;
+      this.loading_page = false;
       this.service.getDataMovies()
         .subscribe(resp => {
           console.log(resp.Search)
