@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
 
       this.service.getDataGifs()
         .subscribe(resp => {
-          this.loading = false
+          this.loading = false;
           this.gifList = resp.results
         })
     }, 3000);

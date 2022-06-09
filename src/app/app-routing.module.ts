@@ -4,7 +4,10 @@ import { NotFoundError } from 'rxjs';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MantgifsComponent } from './pages/mantgifs/mantgifs.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { RegistrarComponent } from './pages/registrar/registrar.component';
 
 const routes: Routes = [
   {
@@ -18,6 +21,18 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'mantgif',
+    component: MantgifsComponent
+  },
+  {
+    path: 'registrar',
+    component: RegistrarComponent
   },
   {
     path: '',

@@ -17,6 +17,16 @@ export class MenuComponent implements OnInit {
       url: 'contact',
       text: 'Gifs',
       icon: 'bi-emoji-smile-upside-down'
+    },
+    {
+      url: 'about',
+      text: 'Gifs (2)',
+      icon: 'bi-emoji-dizzy'
+    },
+    {
+      url: 'mantgif',
+      text: 'Mant. Gif',
+      icon: 'bi-emoji-dizzy'
     }
   ];
 

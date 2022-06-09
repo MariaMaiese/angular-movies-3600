@@ -56,3 +56,22 @@ export interface ApiGifResult {
     next: number
 
 }
+
+export interface GifLocal {
+    id?: number,
+    name?: string,
+    imagen?: string
+}
+
+export interface Usuario {
+    email?: string,
+    password?: string
+}
+
+export interface userToken {
+    expiration?: Date,
+    token: string,
+    status: string,
+    errorMsj: string
+
+}

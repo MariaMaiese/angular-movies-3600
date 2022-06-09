@@ -19,8 +19,10 @@ export class HomeComponent implements OnInit {
     this.loading_page = true;
     setTimeout(() => {
       this.loading_page = false;
+
       this.service.getDataMovies()
         .subscribe(resp => {
+          this.loading = false;
           console.log(resp.Search)
           this.movieList = resp.Search
         })

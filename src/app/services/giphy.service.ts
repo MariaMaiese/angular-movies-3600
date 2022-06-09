@@ -1,11 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiGifResult } from '../interfaces/interfaces';
+import { environment } from 'src/environments/environment';
+import { ApiGifResult, GifLocal } from '../interfaces/interfaces';
+
+const url: string = environment.URL;
 
 @Injectable({
   providedIn: 'root'
 })
 export class GiphyService {
+
+
 
   constructor(private http: HttpClient) { }
   getDataGifs() {
@@ -14,6 +19,13 @@ export class GiphyService {
 
   searchDataMovie(text: string) {
     return this.http.get<ApiGifResult>(`https://g.tenor.com/v1/search?q=${text}&key=JJ3QI6KZOLCK&limit=8`)
+  }
+
+  getDataGifsLocal() {
+    return this.http.get<GifLocal[]>(`${url}/gifs`)
+  }
+  postGif(gif: GifLocal) {
+    return this.http.post(`${url}/gifs`, gif);
   }
 }
 
